@@ -1,21 +1,17 @@
 package interpolacion;
 
-import necesario.FuncionX;
-
 /**
  * Newton
  */
-public class Newton {
-    public static FuncionX funcion;
-    public static double[] x;
-    public static double[] y;
+public class Newton extends Interpolacion{
+
     private static double[] b;
 
     public static void calcular(double x_buscada){
-        calcularValoresDeY(); // solo se calcularan si le das un valor la funcion, sino se omite este paso
+        calcularValoresDeY(); // solo se calcularan si le das un valor a la funcion, sino, se omite este paso
         calcularValoresDeB();
         double multiplicacion;
-        double sumatoria = 0;
+        double y_buscada = 0;
         String formula = "";
         String remplazada = "";
         for (int i = 0; i < x.length; i++){
@@ -27,12 +23,11 @@ public class Newton {
                 formula += String.format("(x - x%d)", j);
                 remplazada += String.format("(%s - %s)", x_buscada, x[j]);
             }
-            sumatoria += (b[i] * multiplicacion);
+            y_buscada += (b[i] * multiplicacion);
             if(i == x.length - 1) break;
             formula += " + ";
             remplazada += " + ";
         }
-        var y_buscada = sumatoria;
 
         System.out.printf("y(%s) = %s\n", x_buscada, formula);
         System.out.printf("y(%s) = %s\n", x_buscada, remplazada);
@@ -74,25 +69,5 @@ public class Newton {
                 System.out.printf("b2 = %s\n", b[i]);
             }
         }
-    }
-
-    private static void calcularValoresDeY(){
-        if (funcion == null) {
-            mostrarTabla(x,y);
-            return;
-        } 
-            
-        y = new double[x.length];
-        System.out.println("Tabla Generada");
-        for (int i = 0; i < x.length; i++) 
-            y[i] = funcion.evaluar(x[i]);
-        mostrarTabla(x, y);
-    }
-
-    private static void mostrarTabla(double[] x, double[] y){
-        System.out.println("  x  |  y  ");
-        for (int i = 0; i < x.length; i++) 
-            System.out.printf("%-5.2f|%-5.2f", x[i], y[i]);
-        
     }
 }
