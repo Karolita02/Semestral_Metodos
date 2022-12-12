@@ -56,17 +56,17 @@ public class Newton extends Interpolacion{
                 b[i] = (y[i] - y[i-1]) / (x[i] - x[i-1]);
                 b[i] -= b[i-1];
                 b[i] /= (x[i] - x[0]);
-                System.out.printf("     (y%d - y%d)\n",i,i-1);
-                System.out.printf("b2 = -------------  -  b%d\n",i-1);
-                System.out.printf("     (x%d - x%d)\n",i,i-1);
+                System.out.printf("     (y%d - y%d)\n", i, i-1);
+                System.out.printf("b%d = -------------  -  b%d\n", i, i-1);
+                System.out.printf("     (x%d - x%d)\n", i, i-1);
                 System.out.printf("     ------------------------\n");
-                System.out.printf("            (x%d - x%d)\n",i,0);
+                System.out.printf("            (x%d - x%d)\n", i, 0);
                 System.out.printf("     (%s - %s)\n", y[i], y[i-1]);
-                System.out.printf("b2 = -------------  -  %s\n", b[i-1]);
+                System.out.printf("b%d = -------------  -  %s\n", i, b[i-1]);
                 System.out.printf("     (%s - %s)\n", x[i], x[i-1]);
                 System.out.printf("     ------------------------\n");
-                System.out.printf("            (%s - %s)\n",x[i],x[0]);
-                System.out.printf("b2 = %s\n", b[i]);
+                System.out.printf("            (%s - %s)\n", x[i], x[0]);
+                System.out.printf("b%d = %s\n", i, b[i]);
             }
         }
     }

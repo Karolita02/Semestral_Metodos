@@ -14,6 +14,9 @@ public class NewtonRapson extends EstimacionDeRaices {
             //                  f(xi)
             // xi+1 = xi -  --------------
             //                  f'(xi)
+            System.out.println("              f(xi)");
+            System.out.println("xi+1 = xi - ----------");
+            System.out.println("              f'(xi)");
             var xi_1 = xi - funcion.evaluar(xi) / derivada.evaluar(xi); //formula
             System.out.println("Calculando nos da xi+1 = " + xi_1);      
             System.out.println("Se Cambia el xi");

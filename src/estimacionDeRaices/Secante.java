@@ -12,8 +12,11 @@ public class Secante extends EstimacionDeRaices{
             //               f(xi) * ((xi-1)-xi)
             // xi+1 = xi -  ---------------------
             //                 f(xi-1)-f(xi)
+            System.out.println("              f(xi) * ((xi-1)-xi)");
+            System.out.println("xi+1 = xi -  ---------------------");
+            System.out.println("                 f(xi-1)-f(xi)");
             var xi_nuevo = xi - (funcion.evaluar(xi) * (xi_anterior - xi)) / (funcion.evaluar(xi_anterior) - funcion.evaluar(xi));//formula
-            System.out.println("Calculando nos da x = " + xi_nuevo);
+            System.out.println("Calculando nos da xi+1 = " + xi_nuevo);
 
             System.out.println("Se Cambia el xi-1");
             System.out.println("xi-1 = xi");
