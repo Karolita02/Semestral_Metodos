@@ -132,6 +132,12 @@ public class Main
 
         // Simpson3_8.calcular();
 
+        //? en caso de necesitarlo Trapecio tambien admite un array con los valores de X y Y
+        //* si quieres, puedes ingresar los valores de N y de H a la vez, lo programe para q no de error ni sobre escriba los valores
+
+        // Trapecio.x = new double[] {1,2,3};
+        // Trapecio.y = new double[] {4,5,6};
+
         Trapecio.funcion = (x) -> 1 / (1 + Math.pow(x,2));
 
         Trapecio.a = 1;
